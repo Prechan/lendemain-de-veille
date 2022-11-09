@@ -24,7 +24,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app>
+    <v-app-bar app dark src="bar-background.jpg">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Lendemain de veille</v-toolbar-title>
@@ -41,13 +41,13 @@ import { RouterView } from 'vue-router';
 
 export default {
   data: () => ({
-    drawer: null,
+    drawer: false,
     items: [
       { title: "Garçon !", icon: "mdi-glass-cocktail", to: '/' },
       { title: "Favoris", icon: "mdi-heart", to: '/favorite' },
       { title: "A propos", icon: "mdi-help-box", to: '/about' },
-    ],
+    ]
   }),
-  components: { RouterView }
+  components: { RouterView },
 }
 </script>
