@@ -1,6 +1,6 @@
 <template>
     <v-list>
-        <v-list-item v-for="ingredient in ingredientList" :key="ingredient.name">
+        <v-list-item v-for="ingredient in ingredients" :key="ingredient.name">
             <v-list-item-avatar>
                 <v-img :src="`https://www.thecocktaildb.com/images/ingredients/${ingredient.name}.png`"></v-img>
             </v-list-item-avatar>
@@ -15,6 +15,6 @@
 
 <script>
 export default {
-    props: ['ingredientList']
+    props: ['ingredients']
 }
 </script>
