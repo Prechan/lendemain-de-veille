@@ -3,12 +3,6 @@ import axios from 'axios';
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/';
 
 export default {
-  getCocktailById(id) {
-    return axios.get('/api/cluster/' + id).then((response) => {
-      return response.data;
-    });
-  },
-
   async getRandomCocktails(number = 3) {
     const promises = this.getCocktailPromises(number);
 
@@ -16,7 +10,7 @@ export default {
       const drinks = responses.map((response) =>
         this.formatDrink(response.data.drinks[0])
       );
-      console.log(drinks);
+
       return drinks;
     });
   },
