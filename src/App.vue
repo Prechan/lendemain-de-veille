@@ -24,7 +24,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app dark src="bar-background.jpg">
+    <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Lendemain de veille</v-toolbar-title>

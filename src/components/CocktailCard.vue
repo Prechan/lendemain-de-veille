@@ -5,9 +5,13 @@
             <template v-slot:activator="{ on, attrs }">
                 <div class="front" v-bind="attrs" v-on="on">
                     <v-card height="100%">
-                        <v-img object-fit="cover" :src="cocktail.strDrinkThumb"></v-img>
-                        <v-card-title>{{ cocktail.strDrink }}</v-card-title>
-                        <v-card-subtitle>{{ cocktail.strCategory }}</v-card-subtitle>
+                        <v-img object-fit="cover" :src="cocktail.thumbUrl"></v-img>
+                        <v-card-title>{{ cocktail.name }}
+                            <v-chip v-if="cocktail.isAlcoholic" class="ma-2" color="red" text-color="white">
+                                Alcool
+                            </v-chip>
+                        </v-card-title>
+                        <v-card-subtitle>{{ cocktail.category }}</v-card-subtitle>
                     </v-card>
                 </div>
             </template>
@@ -17,9 +21,9 @@
         <div class="back">
             <v-card height="100%">
                 <v-card-title> Ingrédients </v-card-title>
-                <IngredientList :ingredient-list="cocktail.ingredientList" />
+                <IngredientList :ingredient-list="cocktail.ingredients" />
                 <v-card-title> Instructions </v-card-title>
-                <v-card-text>{{ cocktail.strInstructions }}</v-card-text>
+                <v-card-text>{{ cocktail.instructions }}</v-card-text>
             </v-card>
         </div>
     </div>
